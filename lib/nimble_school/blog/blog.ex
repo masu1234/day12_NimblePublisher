@@ -22,7 +22,6 @@ defmodule NimbleSchool.Blog do
       [] -> raise NotFoundError, "posts with tag=#{tag} not found"
       posts -> posts
     end
-
   end
 
 

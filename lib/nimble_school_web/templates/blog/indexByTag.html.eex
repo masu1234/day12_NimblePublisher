@@ -1,11 +1,4 @@
-<h1>Listing all posts</h1>
-
-<%= for tag <- NimbleSchool.Blog.all_tags do%>
-    <span>
-        <%= link tag, to: Routes.blog_path(@conn, :indexByTag, tag) %>
-    </span>
-<% end %>
-
+<h1>Listing posts by ??</h1>
 <%= for post <- @posts do %>
     <div id = "<%= post.id %>" style="margin-bottom: 3rem;">
         <h2>

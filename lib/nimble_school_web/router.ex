@@ -18,8 +18,9 @@ defmodule NimbleSchoolWeb.Router do
 
     get "/", PageController, :index
     get "/blog", BlogController, :index
+    # idとtagの見分けをつけられるか？
     get "/blog/:id", BlogController, :show
-    get "/blog/:tag", BlogController, :indexByTag
+    get "/blog/tag/:tag", BlogController, :indexByTag
   end
 
   # Other scopes may use custom stacks.
