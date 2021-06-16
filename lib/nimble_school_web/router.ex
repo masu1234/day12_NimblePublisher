@@ -21,6 +21,11 @@ defmodule NimbleSchoolWeb.Router do
     # idとtagの見分けをつけられるか？
     get "/blog/:id", BlogController, :show
     get "/blog/tag/:tag", BlogController, :indexByTag
+
+    get "/faq", FaqController, :index
+    get "/faq/:id", FaqController, :show
+
+
   end
 
   # Other scopes may use custom stacks.

@@ -1,0 +1,9 @@
+<%= link "← FAQ Top", to: Routes.faq_path(@conn, :index) %>
+<h1><%= @question.title %></h1>
+<p>
+  <time><%= @question.date %></time> by <%= @question.answerer %>
+</p>
+<p>
+  Tagged as <%= Enum.join(@question.tags, ", ") %>
+</p>
+<%= raw @question.body %>

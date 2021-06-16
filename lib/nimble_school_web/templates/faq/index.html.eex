@@ -1,0 +1,24 @@
+<h1>FAQ</h1>
+
+<!--
+<%= for tag <- NimbleSchool.Blog.all_tags do%>
+    <span>
+        <%= link tag, to: Routes.blog_path(@conn, :indexByTag, tag) %>
+    </span>
+<% end %>
+-->
+
+<%= for question <- @questions do %>
+    <div id = "<%= question.id %>" style="margin-bottom: 3rem;">
+        <h2>
+            <%= link question.title, to: Routes.faq_path(@conn, :show, question) %>
+        </h2>
+        <p>
+            <time><%= question.date %></time> by <%= question.answerer %>
+        </p>
+        <p>
+            Tagged as <%= Enum.join(question.tags, ", ") %>
+        </p>
+        <%= raw question.description %>
+    </div>
+<% end %>
