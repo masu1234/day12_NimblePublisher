@@ -24,6 +24,4 @@ defmodule NimbleSchool.Blog do
     end
   end
 
-
-
 end

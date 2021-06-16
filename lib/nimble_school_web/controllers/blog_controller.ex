@@ -3,7 +3,7 @@ defmodule NimbleSchoolWeb.BlogController do
   alias NimbleSchool.Blog
 
   def index(conn, _params) do
-    render(conn, "index.html", posts: Blog.all_posts())
+    render(conn, "index.html", posts: Enum.take(Blog.all_posts(),3))
   end
 
   def show(conn, %{"id" => id}) do
@@ -13,4 +13,5 @@ defmodule NimbleSchoolWeb.BlogController do
   def indexByTag(conn, %{"tag" => tag}) do
     render(conn, "indexByTag.html", posts: Blog.get_posts_by_tag!(tag))
   end
+
 end
