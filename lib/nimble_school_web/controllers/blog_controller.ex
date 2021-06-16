@@ -9,4 +9,9 @@ defmodule NimbleSchoolWeb.BlogController do
   def show(conn, %{"id" => id}) do
     render(conn, "show.html", post: Blog.get_post_by_id!(id))
   end
+
+  def indexByTag(conn, %{"tag" => tag}) do
+    # ここから
+    render(conn, "indexByTag.html", posts: Blog.get_post_by_id!(tag))
+  end
 end
